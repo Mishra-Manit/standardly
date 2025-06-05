@@ -13,7 +13,7 @@ type WaitlistActionResult = {
 };
 
 export async function joinWaitlist(
-  prevState: WaitlistActionResult | undefined,
+  prevState: WaitlistActionResult | null,
   formData: FormData
 ): Promise<WaitlistActionResult> {
   try {
