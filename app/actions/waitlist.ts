@@ -6,7 +6,16 @@ const schema = z.object({
   email: z.string().email("Invalid email address"),
 })
 
-export async function joinWaitlist(prevState: any, formData: FormData) {
+type WaitlistActionResult = {
+  success: boolean;
+  message: string;
+  count?: number;
+};
+
+export async function joinWaitlist(
+  prevState: WaitlistActionResult | undefined,
+  formData: FormData
+): Promise<WaitlistActionResult> {
   try {
     const email = formData.get("email")
 
