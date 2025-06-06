@@ -2,20 +2,27 @@
 
 export function AirtableForm() {
   return (
-    <div className="w-full max-w-2xl" style={{ WebkitOverflowScrolling: 'touch', overflow: 'auto' }}>
-      <iframe
-        className="airtable-embed"
-        src="https://airtable.com/embed/apptofdCJpHeYbp7W/pagOEiIiWNXEmhKnD/form?backgroundColor=transparent"
-        frameBorder="0"
-        width="100%"
-        height="1350"
+    <div className="w-full max-w-2xl relative">
+      <div 
+        className="overflow-y-scroll -webkit-overflow-scrolling-touch"
         style={{ 
-          background: "transparent",
-          overflow: "hidden",
-          WebkitOverflowScrolling: "touch"
+          height: "100vh",
+          maxHeight: "1350px",
+          position: "relative"
         }}
-        title="Airtable Form"
-      ></iframe>
+      >
+        <iframe
+          className="airtable-embed absolute top-0 left-0 w-full h-full"
+          src="https://airtable.com/embed/apptofdCJpHeYbp7W/pagOEiIiWNXEmhKnD/form?backgroundColor=transparent"
+          frameBorder="0"
+          style={{ 
+            background: "transparent",
+            border: "none"
+          }}
+          title="Airtable Form"
+          scrolling="no"
+        ></iframe>
+      </div>
     </div>
   )
 } 
